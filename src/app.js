@@ -4,6 +4,7 @@ const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 
 const app = express()
+const port = process.env.PORT || 3000
 
 app.set('view engine', 'hbs')
 
@@ -28,6 +29,6 @@ app.get('/weather', (req, res) =>{
     })
 })
 
-app.listen(3000, ()=>{
-    console.log('Starting server')
+app.listen(port, ()=>{
+    console.log('Starting server on '+port)
 })
